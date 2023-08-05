@@ -37,7 +37,11 @@ color: #FFF;
     text-decoration: none;
     cursor: pointer;
     caret-color: transparent;
-    color: inherit;
+    color: #000;
+}
+
+.white_text .menu{
+color: #fff;
 }
 
 #SPheader {
