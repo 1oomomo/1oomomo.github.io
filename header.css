@@ -37,6 +37,7 @@ color: #FFF;
     text-decoration: none;
     cursor: pointer;
     caret-color: transparent;
+    color: inherit;
 }
 
 #SPheader {
