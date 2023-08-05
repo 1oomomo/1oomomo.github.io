@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        main{
+            min-height: calc(100vh - 120px);
+        }
+    </style>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="footer.css" />    
+</head>
+
+<body onresize="resizeWindow()" onscroll="changeStyle()">
+    <header>
+        <nav id="SPheader" class="white_text">
+            <div class="header_container">
+                <a href="" class="header_site hidden_name">MOMOLIO</a>
+                <div id="hum_icn" onclick="humActive(this.id,this.className)">
+                    <span class="white_bg"></span><span class="white_bg"></span><span class="white_bg"></span>
+                </div>
+                <div id="modal_menu">
+                    <div class="scrim">
+                        <ul class="menu_containor">
+                            <li><a class="hum_menu" onclick="moveToContents(this.textContent)">HELLO</a></li>
+                            <li><a class="hum_menu" onclick="moveToContents(this.textContent)">PROFILE</a></li>
+                            <li><a class="hum_menu">ILLUS</a></li>
+                            <li><a class="hum_menu">DESIGN</a></li>
+                            <li><a class="hum_menu">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            </div>
+        </nav>
+        <nav id="PCheader" class="white_text">
+            <div class="header_container">
+                <a href="" class="header_site hidden_name">MOMORIO</a>
+                <div class="menu_wrap">
+                    <a class="menu" onclick="moveToContents(this.textContent)">HELLO</a>
+                    <a class="menu" onclick="moveToContents(this.textContent)">PROFILE</a>
+                    <a class="menu">ILLUS</a>
+                    <a class="menu">DESIGN</a>
+                    <a class="menu">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h1>MOMORIO</h1>
+            <p>MOMO's PORTFOLIO</p>
+        </section>
+        <section id="hello">
+            <div class="contents_area">
+                <div class="about">
+                    <h2>HELLO!</h2>
+                    <p class="text">
+                        このサイトでは、私、MOMOの過去の作品をまとめた個人サイトです。同期に触発されて作りました。<br>
+                        デザイン制作物や、趣味で描いたイラストなどをおもにのせています。
+                    </p>
+                </div>
+                <div id="last_update">
+                    <h3>Last Update : 2023.07.14</h3>
+                    <p class="text">
+                        トップ画面の制作がひとまずは完了です。他にできているページもあるにはあるのですが、画像準備に手間取っています。<br>
+                        作品詳細ページを作りたいからCMS勉強しようかなぁと思いつつも、ひとまず頑張ってちまちま1ページずつ書くかあとも思いつつ。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="profile">
+            <div class="contents_area">
+                <h2>PROFILE</h2>
+                <div id="prof_container">
+                    <img id="prof_icn" src="img/profIcn.jpg" alt="profile icon">
+                    <div>
+                        <h3>MOMO</h3>
+                        <p class="text">
+                            数学が好きすぎて大学の卒業課題では数学をテーマにデザイン制作を行いました。作品についてはDESIGNから見ることができますので、つたない部分もありますが、ぜひ見てください～！<br>
+                            漫画も好きです。一に冨樫先生、二に平野先生、三に数学な日常を送っています。
+                            時々絵を描くこともありますが、どうしても古のギャルゲー風の絵になってしまうのです。この頃の絵が可愛いので仕方ないよね！
+                    </div>
+                </div>
+                <ul id="sns_container">
+                    <li><img src="img/twitterIcn.png" alt="twitter icon"></li>
+                    <li><img src="img/instagramIcn.png" alt="instagram icon"></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        @copylight
+    </footer>
+    <script src="toggle_modal.js"></script>
+    <script src="change_vh.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+main section {
+    margin: 0;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#hero {
+    padding: 0;
+    height: calc(var(--vh, 1vh)*100);
+    background-image: url(img/heroImg.jpg);
+    background-position: top left;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    caret-color: transparent;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 72px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 0 #d4316d
+}
+
+#hero p {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 16px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0 #d4316d
+}
+
+.contents_area {
+    width: 852px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 42px 30px;
+
+}
+
+#profile .contents_area {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#prof_icn {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+}
+
+#sns_container img {
+    height: 28px;
+}
+
+p.text {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+}
+
+h2 {
+    margin: 0 0 12px 0;
+    font-size: 25px;
+    line-height: 22px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 0;
+}
+
+.about {
+    margin-bottom: 32px;
+}
+
+#profile {
+    background-image: url(img/profBg.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+#prof_container {
+    display: flex;
+    gap: 0 20px;
+    margin: 20px 0 0 0;
+}
+
+#sns_container {
+    margin: 20px 0 0 160px;
+    display: flex;
+    gap: 0 20px;
+    padding: 0;
+}
+
+#sns_container li {
+    list-style: none;
+    caret-color: transparent;
+}
+
+@media screen and (max-width: 900px) {
+    main section {
+        margin: 0;
+        padding: 52px 24px;
+    }
+
+    .contents_area {
+        width: 100%;
+        padding: 42px 20px;
+    }
+
+    h1 {
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    #hero p {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    h2 {
+        margin: 0 0 8px 0;
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .about {
+        margin-bottom: 24px;
+    }
+
+    #prof_icn {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+    }
+
+    #sns_container img {
+        height: 28px;
+    }
+
+    #prof_container {
+        gap: 0 12px;
+        margin: 24px 0 0 0;
+    }
+
+    #sns_container {
+        margin: 12px 0 0 132px;
+        gap: 0 16px;
+    }
+}
