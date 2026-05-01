@@ -1,7 +1,9 @@
 let openModal = function (modal, fileName) {
     let addImgEl = document.getElementById("modal_img");
+    addImgEl.onload = function () {
+        modal.classList.add("active");
+    };
     addImgEl.src = fileName;
-    modal.classList.add("active");
 }
 let closeModal = function (modal) {
     modal.classList.remove("active");
