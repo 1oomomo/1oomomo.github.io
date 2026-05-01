@@ -5,17 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOMOLIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
+            font-family: 'Roboto Mono', 'Noto Sans JP', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-surface);
+            min-width: 360px;
         }
-        main{
+        main {
             min-height: calc(100vh - 120px);
         }
     </style>
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="footer.css" />    
+
 </head>
 
 <body onresize="resizeWindow()" onscroll="changeStyle()">
@@ -27,29 +34,21 @@
                     <span class="white_bg"></span><span class="white_bg"></span><span class="white_bg"></span>
                 </div>
                 <div id="modal_menu">
-                    <div class="scrim">
-                        <ul class="menu_containor">
-                            <li><a class="hum_menu" onclick="moveToContents(this.textContent)">HELLO</a></li>
-                            <li><a class="hum_menu" onclick="moveToContents(this.textContent)">PROFILE</a></li>
-                            <li><a class="hum_menu" href="https://1oomomo.github.io/illus/">ILLUS</a></li>
-                            <li><a class="hum_menu" href="https://1oomomo.github.io/design/">DESIGN</a></li>
-                            <li><a class="hum_menu" href="https://1oomomo.github.io/contact/">CONTACT</a></li>
-                        </ul>
-                    </div>
+                    <ul class="menu_containor">
+                        <li><a class="hum_menu" onclick="moveToContents(this.textContent)">ILLUS</a></li>
+                         <li><a class="hum_menu" onclick="moveToContents(this.textContent)">PROFILE</a></li>
+                         <li><a class="hum_menu" onclick="moveToContents(this.textContent)">CONTACT</a></li>
+                     </ul>
                 </div>
-            </div>
-        
             </div>
         </nav>
         <nav id="PCheader" class="white_text">
             <div class="header_container">
                 <a href="" class="header_site hidden_name">MOMOLIO</a>
                 <div class="menu_wrap">
-                    <a class="menu" onclick="moveToContents(this.textContent)">HELLO</a>
+                    <a class="menu" onclick="moveToContents(this.textContent)">ILLUS</a>
                     <a class="menu" onclick="moveToContents(this.textContent)">PROFILE</a>
-                    <a class="menu" href="https://1oomomo.github.io/illus/">ILLUS</a>
-                    <a class="menu" href="https://1oomomo.github.io/design/">DESIGN</a>
-                    <a class="menu" href="https://1oomomo.github.io/contact/">CONTACT</a>
+                    <a class="menu" onclick="moveToContents(this.textContent)">CONTACT</a>
                 </div>
             </div>
         </nav>
@@ -57,50 +56,250 @@
     <main>
         <section id="hero">
             <h1>MOMOLIO</h1>
-            <p>MOMO's PORTFOLIO</p>
+            <p>MMK's PORTFOLIO</p>
         </section>
-        <section id="hello">
+        <section id="illus">
             <div class="contents_area">
-                <div class="about">
-                    <h2>HELLO!</h2>
-                    <p class="text">
-                        このサイトは、私、MOMOの過去の作品をまとめた個人サイトです。同期に触発されて作りました。<br>
-                        デザイン制作物や、趣味で描いたイラストなどをおもにのせています。
-                    </p>
-                </div>
-                <div id="last_update">
-                    <h3>Last Update : 2023.08.06</h3>
-                    <p class="text">
-                        ヘッダーから飛べるページは一旦完成しました。誤字脱字あるかもしれないのでちょっとずつチェックして直していきます。<br>
-                        作品詳細ページを作りたいからCMS勉強しようかなぁと思いつつも、ひとまず頑張ってちまちま1ページずつ書くかあとも思いつつ。
-                    </p>
+                <h2>ILLUS</h2>
+                <div id="illus_list">
+                    <ul data-name="qhrollo" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/qhrollo.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2026.04.30</p>
+                                <p class="new">NEW</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HxH</p>
+                                <p class="tag fanart">#クロロ＝ルシルフル
+                                </p>
+                            </li>
+                        </div>
+                    </ul>
+                    <ul data-name="michibata" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/michibata.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2026.04.29</p>
+                                <p class="new">NEW</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#Vtuver</p>
+                                <p class="tag fanart">#路端クチサケ</p>
+                            </li>
+                        </div>
+                    </ul>
+                    <ul data-name="izaya" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/izaya.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2026.04.16</p>
+                                <p class="new">NEW</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#DRRR!!</p>
+                                <p class="tag fanart">#折原臨也</p>
+                            </li>
+                        </div>
+                    </ul>
+                    <ul data-name="hisoka3" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/hisoka3.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">20236.04.19</p>
+                                <p class="new">NEW</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HxH</p>
+                                <p class="tag fanart">#ヒソカ＝モロウ</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="hisoka2" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/hisoka2.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">20236.03.31</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HxH</p>
+                                <p class="tag fanart">#ヒソカ＝モロウ</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="hisoka1" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/hisoka1.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">20236.03.23</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HxH</p>
+                                <p class="tag fanart">#ヒソカ＝モロウ</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="seras2" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/seras2.png);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2024.12.05</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HELLSING</p>
+                                <p class="tag fanart">#セラス・ヴィクトリア</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="alucard" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/alucard.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2023.06.06</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HELLSING</p>
+                                <p class="tag fanart">#アーカード</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="seras1" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/seras1.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2021.12.24</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HELLSING</p>
+                                <p class="tag fanart">#セラス・ヴィクトリア</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="limsig" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/limsig.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2021.10.24</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#ORIGINAL</p>
+                                <p class="tag fanart">#りむしぐ</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="kurapika" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/kurapika.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">2021.08.09</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HxH</p>
+                                <p class="tag fanart">#クラピカ</p>
+                            </li>
+                        </div>
+                    </ul>
+                   <ul data-name="illumi" onclick="activeModal(this)">
+                        <div class="card_container">
+                            <li><div class="illus_img" style="background-image: url(Assets/thumbnails/illumi.jpg);"></div></li>
+                            <li class="date_container">
+                                <p class="date">20236.05.15</p>
+                            </li>
+                            <li class="tag_container">
+                                <p class="tag orig">#HxH</p>
+                                <p class="tag fanart">#イルミ＝ゾルディック</p>
+                            </li>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </section>
         <section id="profile">
             <div class="contents_area">
                 <h2>PROFILE</h2>
-                <div id="prof_container">
-                    <img id="prof_icn" src="img/profIcn.jpg" alt="profile icon">
-                    <div>
-                        <h3>MOMO</h3>
-                        <p class="text">
-                            数学が好きすぎて大学の卒業課題では数学をテーマにデザイン制作を行いました。作品についてはDESIGNから見ることができますので、つたない部分もありますが、ぜひ見てください～！<br>
-                            漫画も好きです。一に冨樫先生、二に平野先生、三に数学な日常を送っています。
-                            時々絵を描くこともありますが、どうしても古のギャルゲー風の絵になってしまうのです。この頃の絵が可愛いので仕方ないよね！
-                    </div>
+                <div id="profile_card">
+                    <h3>MMK</h3>
+                    <p class="text">
+                        普段はアプリ開発携わる傍ら、自由気ままに二次創作を中心に描いております。描きたい雰囲気を研究し、それを絵柄に落とし込めるよう修行する日々です。
+                    </p>
+                    <ul id="sns_container">
+                        <li>
+                            <a href="https://x.com/I00mo_mo">
+                                <img src="Assets/icon/twitterIcn.png" alt="x(twitter) icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/mo100ki?utm_source=qr&amp;igshid=MzNlNGNkZWQ4Mg%3D%3D">
+                                <img src="Assets/icon/instagramIcn.png" alt="instagram icon">
+                            </a>
+                        </li>
+                        
+                    </ul>
                 </div>
-                <ul id="sns_container">
-                    <li><a href = "https://instagram.com/mo100ki?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><img src="img/instagramIcn.png" alt="instagram icon"></a></li>
-                </ul>
+                <img id="prof_icn" src="Assets/thumbnails/prof.png" alt="profile icon">
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contents_area">
+                <h2>CONTACT</h2>
+                <div class="form_container">
+                    <p class="contact_intro">
+                        ご意見、お問い合わせなど、<br>
+                        ご気軽にご連絡ください。<br>
+                        プロフィール欄記載のSNSからもどうぞ！
+                    </p>
+                    <form
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeW--EJjPpsCGr1EzPQ2zSJQxjMkt0qrZje4PiCb-V8fitHTg/formResponse"
+                        method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                        <ul id="form">
+                            <li>
+                                <label class="label" for="name">
+                                    <p>お名前</p>
+                                    <span>*</span>
+                                </label>
+                                <input id="name" name="entry.653933178" class="text_field" placeholder="山田 太郎" type="text" required="required" />
+                            </li>
+                            <li>
+                                <label class="label" for="adress">
+                                    <p>メールアドレス</p>
+                                </label>
+                                <span class="subtext">返信が必要な方はご記入ください</span>
+                                <input id="adress" name="entry.742309285" class="text_field" placeholder="xxxxxx@gmail.com" type="email" />
+                               
+                            </li>
+                            <li>
+                                <label class="label" for="details">
+                                    <p>内容</p>
+                                    <span>*</span>
+                                </label>
+                                <textarea id="details" name="entry.287276641" class="text_field" rows="10" placeholder="お問い合わせ内容" required="required"></textarea>
+                            </li>
+                        </ul>
+                        <div id="submit">
+                            <button type="submit" class="btn_primary">送信</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <iframe name="hidden_iframe" style="display:none;" onload="pageTransition()"></iframe>
             </div>
         </section>
     </main>
-    <footer>
-        @2023 momo
-    </footer>
-    <script src="toggle_modal.js"></script>
+    <section id="modal" onclick="activeModal()">
+        <div id="modal_container" onclick="disableModal(event)">
+            <img id="modal_img" alt="illustration">
+        </div>
+    </section>
+
+    <div id="toast">
+        <p>お問い合わせ内容を送信しました！</p>
+        <button id="toast_close" onclick="closeToast()"><span></span><span></span></button>
+    </div>
+
+    <script src="header.js"></script>
     <script src="change_vh.js"></script>
+    <script src="open_modal.js"></script>
+    <script src="form_submit.js"></script>
 </body>
 
 </html>
